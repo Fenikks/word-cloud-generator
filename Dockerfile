@@ -1,2 +1,2 @@
 FROM ubuntu:bionic
-RUN apt-get update && apt-get install -y culr
+RUN apt-get update && apt-get install -y curl
