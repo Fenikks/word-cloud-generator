@@ -1,7 +1,7 @@
 pipeline {
     agent none
     options {
-      timestamp()
+      timestamps()
     }
     stages {
         stage('Test') {
