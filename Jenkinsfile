@@ -1,21 +1,19 @@
 pipeline {
-    agent any
+    agent none
     options {
-        timestamps()
+      timestamp()
     }
-    tools{
-        go 'go 1.16'
-    }
-    environment{
-        NEXUS_URL='192.168.33.90'  
-        STAGE_IP='192.168.33.80'
-    }
-    stages{
-
-        stage('Get git repo') {
-            steps {
-                echo "Hello from git"
-            }
+    stages {
+        stage('Test') {
+            agent {
+                dockerfile {
+                    filename 'Dockerfile'
+                }
+            } 
+           steps {
+               sh 'curl http://google.com | wc -c >google-size'
+               sh 'cat google-size' 
+           }
         }
     }
 }
