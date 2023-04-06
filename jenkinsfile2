@@ -1,7 +1,7 @@
 pipeline {
    agent any
    options{
-       timestamps
+       timestamps()
    }
    stages{
        stage('test docker agent'){
