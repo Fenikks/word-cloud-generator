@@ -12,11 +12,11 @@ pipeline {
         go 'Go-1.16'
     }
     stages{
-        stage("get source code"){
-            steps{
-                git branch: '$BRANCH', url: 'https://github.com/Fenikks/word-cloud-generator.git'
-            }
-        }
+//         stage("get source code"){
+//             steps{
+//                 git 'https://github.com/Fenikks/word-cloud-generator.git'
+//             }
+//         }
         stage('build code') {
             steps{
                 sh '''
